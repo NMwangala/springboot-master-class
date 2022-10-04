@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class CustomerService {
 
 	private final CustomerRepo  customerRepo;
 	
-	public CustomerService( @Qualifier("fake") CustomerRepo customerRepo) {
+	public CustomerService( CustomerRepo customerRepo) {
 		
 		this.customerRepo = customerRepo;
 	}
