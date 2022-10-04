@@ -2,10 +2,12 @@ package com.springboot.springbootmasterclass.customer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 public class Customer {
 	private final Long id;
 	private final String name;
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private final String password;
 
 	public Customer(Long id, String name, String password) {
